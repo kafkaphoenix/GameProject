@@ -1,4 +1,4 @@
-#include "SimpleEngine/Engine.h"
+#include <SimpleEngine/Engine.h>
 
 int main() {
     SimpleEngine::Initialize();
