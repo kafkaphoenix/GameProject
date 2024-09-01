@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(GameProject VERSION 1.1.0 LANGUAGES CXX)
+project(GameProject VERSION 1.2.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,7 +10,7 @@ include(FetchContent)
 FetchContent_Declare(
     game_engine
     GIT_REPOSITORY https://github.com/kafkaphoenix/GameEngine.git
-    GIT_TAG        v1.1.0
+    GIT_TAG        v1.2.0
 )
 
 FetchContent_GetProperties(game_engine)
@@ -24,4 +24,4 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cp
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE GameEngine)
+target_link_libraries(${PROJECT_NAME} PRIVATE GameEngine::GameEngine)
