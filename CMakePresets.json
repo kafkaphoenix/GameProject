@@ -8,35 +8,62 @@
   "configurePresets": [
     {
       "name": "default",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe",
+        "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x86/cl.exe"
+      }
+    },
+    {
+      "name": "ninja",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang.exe",
+        "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang++.exe",
+        "CMAKE_RC_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang-cl.exe"
       }
     },
     {
       "name": "static",
       "inherits": "default",
       "cacheVariables": {
-        "BUILD_SHARED_LIBS": "OFF"
+        "BUILD_SHARED_LIBS": "OFF",
+        "CMAKE_BUILD_TYPE": "Release"
       }
     },
     {
       "name": "shared",
       "inherits": "default",
       "cacheVariables": {
-        "BUILD_SHARED_LIBS": "ON"
+        "BUILD_SHARED_LIBS": "ON",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "debug",
+      "inherits": "default",
+      "cacheVariables": {
+        "BUILD_SHARED_LIBS": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "static",
+      "name": "release-static",
       "configurePreset": "static"
     },
     {
-      "name": "shared",
+      "name": "release-shared",
       "configurePreset": "shared"
+    },
+    {
+      "name": "debug",
+      "configurePreset": "debug"
     }
   ]
 }
