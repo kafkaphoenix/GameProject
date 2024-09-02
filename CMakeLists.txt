@@ -10,7 +10,7 @@ include(FetchContent)
 FetchContent_Declare(
     game_engine
     GIT_REPOSITORY https://github.com/kafkaphoenix/GameEngine.git
-    GIT_TAG        v1.2.0
+    GIT_TAG        v1.3.0
 )
 
 FetchContent_GetProperties(game_engine)

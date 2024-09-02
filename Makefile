@@ -16,3 +16,7 @@ static: ## Generate static build
 shared: ## Generate shared build
 	cmake --preset shared
 	cmake --build build
+
+.PHONY: clean
+clean: ## Clean build directory
+	rm -rf build
