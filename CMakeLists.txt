@@ -22,6 +22,10 @@ endif()
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+set(ICON ${CMAKE_CURRENT_SOURCE_DIR}/packaging/main.rc)
+
+add_executable(${PROJECT_NAME} ${SOURCES} ${ICON})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE GameEngine::GameEngine)
+
+set_source_files_properties(${ICON} PROPERTIES LANGUAGE RC)
