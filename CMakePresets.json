@@ -55,15 +55,18 @@
   "buildPresets": [
     {
       "name": "release-static",
-      "configurePreset": "static"
+      "configurePreset": "static",
+      "configuration": "Release"
     },
     {
       "name": "release-shared",
-      "configurePreset": "shared"
+      "configurePreset": "shared",
+      "configuration": "Release"
     },
     {
       "name": "debug",
-      "configurePreset": "debug"
+      "configurePreset": "debug",
+      "configuration": "Debug"
     }
   ]
 }
